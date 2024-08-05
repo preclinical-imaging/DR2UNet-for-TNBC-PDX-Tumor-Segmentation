@@ -21,7 +21,7 @@ WORKDIR /usr/src/app
 
 # Copy the model weights and source code
 RUN mkdir -p /usr/src/app/weights
-COPY weights_new/ ./weights/
+ADD https://bitbucket.org/xnat-containers/pixi-tnbc-pdx-segmentation/downloads/model_r2udensenet.hdf5 /usr/src/app/weights/model_r2udensenet.hdf5
 COPY *.py ./
 COPY *.npy ./
 COPY *.mat ./
