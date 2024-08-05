@@ -26,7 +26,8 @@ COPY *.py ./
 COPY *.npy ./
 COPY *.mat ./
 
-RUN chown -R ${NB_UID}:${NB_GID} /usr/src/app
+RUN chown -R ${NB_UID}:${NB_GID} /usr/src/app && \
+    chmod -R 755 /usr/src/app
 
 ENV PYTHONPATH=${PYTHONPATH}:/usr/src/app
 ENV PYTHONUNBUFFERED=1
